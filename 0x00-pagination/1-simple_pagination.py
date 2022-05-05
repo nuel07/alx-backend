@@ -26,7 +26,7 @@ class Server:
 
         return self.__dataset
 
-    def get_page(page: int = 1, page_size: int = 10) -> List[List]:
+    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         '''returns a list'''
         self.dataset()
         assert type(page) is int and type(page_size) is int
@@ -37,3 +37,9 @@ class Server:
             return []
 
         return self.__dataset[idx[0]:idx[1]]
+
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    ''' returns  tuple '''
+    start_idx = page * page_size - page_size
+    stop_idx = start_idx + page_size
+    return (start_idx, stop_idx)
