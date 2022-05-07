@@ -23,7 +23,6 @@ class Server:
                 dataset = [row for row in reader]
             self.__dataset = dataset[1:]
 
-
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
@@ -38,6 +37,7 @@ class Server:
 
         return self.__dataset[idx[0]:idx[1]]
 
+    
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     ''' returns  tuple '''
     start_idx = page * page_size - page_size

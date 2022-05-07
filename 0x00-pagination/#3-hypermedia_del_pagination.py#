@@ -45,9 +45,10 @@ class Server:
         data_size = len(dataset)
         assert type(index) is int
         assert 0 <= index < data_size
-        
         return {
             "index": index,
-            
+            "next_index": index,
+            "page_size": len(data),
+            "data": data,
             
         }

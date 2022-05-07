@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
 '''  A simple pagination module '''
 
 import csv
@@ -24,7 +23,6 @@ class Server:
                 dataset = [row for row in reader]
             self.__dataset = dataset[1:]
 
-
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
@@ -39,7 +37,8 @@ class Server:
 
         return self.__dataset[idx[0]:idx[1]]
 
-    def get_hyper(self, page: int=1, page_size: int=10) -> Dict:
+    def get_hyper(self, page: int = 1,
+                  page_size: int = 10) -> Dict:
         ''' returns a dictionary '''
         dataset_items = len(self.dataset())
         data = self.get_page(page, page_size)
