@@ -14,10 +14,11 @@ class MRUCache(BaseCaching):
 
     def put(self, key, item):
         ''' assigns to dictionary item value for the key '''
-        if key and item:
-            self.cache_data[key] = item
-            self.cache_order[key] = item
-        return
+        if not key and not item:
+            return
+        
+        self.cache_data[key] = item
+        self.cache_order[key] = item
 
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             discard_this = next(iter(self.cache_order))
