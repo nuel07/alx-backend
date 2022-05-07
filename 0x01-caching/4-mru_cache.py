@@ -28,6 +28,8 @@ class MRUCache(BaseCaching):
 
         self.cache_order.move_to_end(key, False)
 
+        return
+
     def get(self, key):
         ''' self descriptive '''
         if key in self.cache_data:
