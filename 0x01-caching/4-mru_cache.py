@@ -14,9 +14,9 @@ class MRUCache(BaseCaching):
 
     def put(self, key, item):
         ''' assigns to dictionary item value for the key '''
-        if not key and not item:
+        if not key or not item:
             return
-        
+
         self.cache_data[key] = item
         self.cache_order[key] = item
 
