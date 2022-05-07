@@ -15,6 +15,7 @@ class FIFOCache(BaseCaching):
         if key and item:
             if key in self.cache_data:
                 self.cache_data[key] = item
+                return
 
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 discard_this = self.my_keys.pop(0)
