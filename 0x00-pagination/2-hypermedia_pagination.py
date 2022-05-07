@@ -54,6 +54,7 @@ class Server:
             }
         return page_dict
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     ''' returns  tuple '''
     start_idx = page * page_size - page_size
