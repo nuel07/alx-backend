@@ -25,7 +25,7 @@ class FIFOCache(BaseCaching):
             self.cache_data[key] = item
             self.my_keys.append(key)
 
-        def get(self, key):
-            ''' return value linked to key '''
-            if key is not None:
-                return self.cache_data.get(key)
+    def get(self, key):
+        ''' return value linked to key '''
+        if key is not None:
+            return self.cache_data.get(key)
