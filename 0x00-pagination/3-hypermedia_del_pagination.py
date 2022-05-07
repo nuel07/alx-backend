@@ -47,6 +47,4 @@ class Server:
         assert 0 <= index < data_size
         return {
             "index": index,
-            
-            
         }
