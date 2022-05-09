@@ -18,7 +18,8 @@ class LFUCache(BaseCaching):
         self.usage = {}
 
     def put(self, key, item):
-        ''' assign to the dictionary self.cache_data the item value for the key key '''
+        ''' assign to the dictionary self.cache_data
+        the item value for the key key '''
 
         if key is not None and item is not None:
             if (len(self.my_keys) == BaseCaching.MAX_ITEMS and
