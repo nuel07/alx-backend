@@ -24,7 +24,8 @@ class LFUCache(BaseCaching):
         if key is not None and item is not None:
             if (len(self.my_keys) == BaseCaching.MAX_ITEMS and
                     key not in self.my_keys):
-                discard_this = self.my_keys.pop(self.my_keys.index(self.findLFU()))
+                discard_this = self.my_keys.pop(
+                    self.my_keys.index(self.findLFU()))
                 del self.cache_data[discard_this]
                 del self.usage[discard_this]
                 print('DISCARD: {:s}'.format(discard_this))
@@ -33,14 +34,16 @@ class LFUCache(BaseCaching):
                 self.my_keys.append(key)
                 self.usage[key] = 0
             else:
-                self.my_keys.append(self.my_keys.pop(self.my_keys.index(key)))
+                self.my_keys.append(self.my_keys.pop(
+                    self.my_keys.index(key)))
                 self.usage[key] += 1
 
     def get(self, key):
         ''' Return value stored in `key` key of cache.
             If key is None or does not exist in cache, return None. '''
         if key is not None and key in self.cache_data:
-            self.my_keys.append(self.my_keys.pop(self.my_keys.index(key)))
+            self.my_keys.append(
+                self.my_keys.pop(self.my_keys.index(key)))
             self.usage[key] += 1
             return self.cache_data[key]
         return None
