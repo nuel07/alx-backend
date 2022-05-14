@@ -2,7 +2,7 @@
 """basic flask app"""
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, gettext
+from flask_babel import Babel
 
 
 app = Flask(__name__)
@@ -33,4 +33,4 @@ def hello():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=5000)

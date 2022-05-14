@@ -2,7 +2,7 @@
 """basic flask app"""
 
 from flask import Flask, request, render_template, g
-from flask_babel import Babel, gettext
+from flask_babel import Babel
 
 app = Flask(__name__)
 app.url_map_strict_slashes = False
@@ -56,4 +56,4 @@ def get_user():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=5000)

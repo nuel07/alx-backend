@@ -2,7 +2,7 @@
 ''' A basic Flask app '''
 
 from flask import Flask, request, render_template
-from flask_babel import Babel, gettext
+from flask_babel import Babel
 
 
 app = Flask(__name__)
@@ -36,4 +36,4 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)

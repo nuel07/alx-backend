@@ -2,7 +2,7 @@
 ''' basic Flask app '''
 
 from flask import Flask, request, render_template, g
-from flask_babel import Babel, gettext
+from flask_babel import Babel
 import pytz
 
 app = Flask(__name__)
@@ -70,4 +70,4 @@ def get_timezone():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
